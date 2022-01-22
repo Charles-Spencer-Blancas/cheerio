@@ -1,29 +1,35 @@
 function postureFunc() {
     chrome.alarms.create('posture', {
-        periodInMinutes: 45,
+        periodInMinutes: 45, //45
     });
 }
 
 function waterFunc() {
     chrome.alarms.create('water', {
-        periodInMinutes: 30,
+        periodInMinutes: 30, //30
     });
 }
 
 function eyeFunc() {
     chrome.alarms.create('eye', {
-        periodInMinutes: 20,
+        periodInMinutes: 20, //20
     });
 }
 
 function moveFunc() {
     chrome.alarms.create('move', {
-        periodInMinutes: 60,
+        periodInMinutes: 60, //60
     });
 }
 
-postureFunc();
-waterFunc();
+function notification(title, message, iconURL) {
+    chrome.notifications.create({
+        title: title,
+        message: message,
+        type: 'basic',
+        iconUrl: iconURL,
+    });
+}
 
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name == 'posture') {
@@ -59,11 +65,16 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     }
 });
 
-function notification(title, message, iconURL) {
-    chrome.notifications.create({
-        title: title,
-        message: message,
-        type: 'basic',
-        iconUrl: iconURL,
-    });
-}
+postureFunc();
+waterFunc();
+eyeFunc();
+moveFunc();
+
+chrome.storage.onChanged.addListener((changes, area) => {
+    chrome.alarms.clearAll();
+
+    if (changes.posture?.newValue) postureFunc();
+    if (changes.water?.newValue) waterFunc();
+    if (changes.eye?.newValue) eyeFunc();
+    if (changes.move?.newValue) moveFunc();
+});

@@ -35,9 +35,10 @@ h1 {
 
 #save {
     background-color: #ffb5ed;
-    border: 0;
+    border: solid 1px;
+    border-color: #e899ad;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     padding: 8px 25px;
     align-self: center;
     font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue',
@@ -46,6 +47,10 @@ h1 {
     text-shadow: 1px 1px 2px #ffafa8;
 }
 
+#save:hover {
+    background-color: #f2ace1;
+}
+
 #save:active {
-    background-color: #dd99e8;
+    background-color: #e6a3d5;
 }
