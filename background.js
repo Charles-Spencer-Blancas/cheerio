@@ -1,16 +1,30 @@
-function posturefunc() {
-    posture = setInterval(() => {
+// function postureFunc() {
+//     posture = setInterval(() => {
+//         notification(
+//             'Posture Check',
+//             'Are you sitting up straight?',
+//             'assets/128.png'
+//         );
+//     }, minToMs(60));
+// }
+
+function postureFunc() {
+    chrome.alarms.create('posture', {
+        periodInMinutes: 1,
+    });
+}
+
+postureFunc();
+
+chrome.alarms.onAlarm.addListener((alarm) => {
+    if (alarm.name == 'posture') {
         notification(
             'Posture Check',
             'Are you sitting up straight?',
             'assets/128.png'
         );
-    }, minToMs(60));
-}
-
-posturefunc();
-clearInterval(posture);
-posturefunc();
+    }
+});
 
 // setInterval(
 //     () =>
