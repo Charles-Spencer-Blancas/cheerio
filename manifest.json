@@ -7,7 +7,10 @@
         "service_worker": "background.js"
     },
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "assets/128.png"
+        }
     },
     "permissions": ["notifications","alarms","storage"]
 }
