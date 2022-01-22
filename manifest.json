@@ -1,0 +1,6 @@
+{
+    "name": "Cheerio",
+    "description": "A chrome extension that reminds you to take care of yourself when browsing the web.",
+    "version": "0.1",
+    "manifest_version": 3
+}
