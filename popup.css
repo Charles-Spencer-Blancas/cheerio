@@ -4,8 +4,8 @@ body {
     font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue',
         'Arial', sans-serif;
     color: #ffffff;
-    text-shadow: 1px 1px 2px #e61607;
-    background-color: #ffb5ed;
+    text-shadow: 1px 1px 2px #ffafa8;
+    background-color: #dca8ff;
 }
 
 h1 {
@@ -13,6 +13,7 @@ h1 {
     margin: 0;
     padding: 10px;
     padding-bottom: 5px;
+    text-align: center;
 }
 
 .container {
@@ -29,4 +30,22 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
+}
+
+#save {
+    background-color: #ffb5ed;
+    border: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    align-self: center;
+    font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue',
+        'Arial', sans-serif;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #ffafa8;
+}
+
+#save:active {
+    background-color: #dd99e8;
 }

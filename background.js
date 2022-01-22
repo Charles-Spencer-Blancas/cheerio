@@ -10,8 +10,8 @@ function waterFunc() {
     });
 }
 
-function eyesFunc() {
-    chrome.alarms.create('eyes', {
+function eyeFunc() {
+    chrome.alarms.create('eye', {
         periodInMinutes: 20,
     });
 }
@@ -42,7 +42,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
         );
     }
 
-    if (alarm.name == 'eyes') {
+    if (alarm.name == 'eye') {
         notification(
             'Short Eye Break',
             'For 20 seconds, look at something far outside or close your eyes',
