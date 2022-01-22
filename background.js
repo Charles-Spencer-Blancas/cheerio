@@ -1,12 +1,32 @@
-setInterval(() => {
-    notification();
-}, 30000);
+setInterval(
+    () =>
+        notification(
+            'Posture Check',
+            'Are you sitting up straight?',
+            'assets/128.png'
+        ),
+    minToMs(60)
+);
 
-function notification() {
+setInterval(
+    () =>
+        notification(
+            'Sip Check',
+            "Take a sip of water if you haven't in a while",
+            'assets/128.png'
+        ),
+    minToMs(30)
+);
+
+function notification(title, message, iconURL) {
     chrome.notifications.create({
-        title: 'test',
-        message: 'this is a test message',
+        title: title,
+        message: message,
         type: 'basic',
-        iconUrl: 'assets/128.png',
+        iconUrl: iconURL,
     });
+}
+
+function minToMs(minutes) {
+    return minutes * 60 * 1000;
 }
