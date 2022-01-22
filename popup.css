@@ -9,7 +9,6 @@ body {
 }
 
 h1 {
-    font-family: sans-serif;
     margin: 0;
     padding: 10px;
     padding-bottom: 5px;
@@ -33,6 +32,11 @@ h1 {
     gap: 50px;
 }
 
+.iconText {
+    display: flex;
+    align-items: center;
+}
+
 #save {
     background-color: #ffb5ed;
     border: solid 1px;
@@ -53,4 +57,8 @@ h1 {
 
 #save:active {
     background-color: #e6a3d5;
+}
+
+img {
+    filter: invert(100%);
 }
